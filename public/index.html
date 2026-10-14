@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f5f7f9">
+  <title>GmpTraqer — Indian IPO watchlist</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="/" aria-label="GmpTraqer home"><span class="brand-icon">↗</span> GmpTraqer<span class="brand-dot">.</span></a><span class="market"><i></i> INDIAN MARKETS <span class="divider">/</span> IPO INTELLIGENCE</span><a class="source-link" href="https://www.investorgain.com/report/ipo-gmp-live/331/" target="_blank" rel="noopener noreferrer">View source ↗</a></header>
+  <main>
+    <section class="heading"><div><div class="eyebrow">YOUR IPO WATCHLIST</div><h1>A clearer view of what’s next.</h1><p>Grey market premiums, listing estimates, and profit per lot. In one place.</p></div><div class="refresh-area"><button id="refresh" class="primary"><span id="refresh-icon">↻</span> <span id="refresh-label">Refresh data</span></button><span id="updated">Waiting for first refresh</span></div></section>
+    <div id="notice" class="notice" role="status" aria-live="polite" hidden></div>
+    <section class="stats" aria-label="Filtered IPO summary">
+      <article class="stat"><span class="stat-label">IPOs ON YOUR RADAR <span class="stat-icon">◫</span></span><strong id="stat-count">—</strong><span id="stat-scope" class="stat-foot">Mainboard · Unlisted</span></article>
+      <article class="stat"><span class="stat-label">OPEN FOR APPLICATION <span class="stat-icon">↗</span></span><strong id="stat-open">—</strong><span class="stat-foot">Open or closing today</span></article>
+      <article class="stat"><span class="stat-label">HIGHEST GMP <span class="stat-icon">%</span></span><strong id="stat-gmp" class="green">—</strong><span id="stat-gmp-name" class="stat-foot">Among visible IPOs</span></article>
+      <article class="stat"><span class="stat-label">HIGHEST EST. PROFIT / LOT <span class="stat-icon">₹</span></span><strong id="stat-profit" class="green">—</strong><span id="stat-profit-name" class="stat-foot">Among visible IPOs</span></article>
+    </section>
+    <section class="watchlist" aria-label="IPO watchlist">
+      <div class="table-heading"><div><h2>IPO watchlist <span id="count" class="count">0</span></h2><p>Follow the premium. See the potential.</p></div><button id="export" class="secondary" disabled>↓ Export CSV</button></div>
+      <div class="toolbar"><div class="segments" role="group" aria-label="IPO market segment"><button data-board="Mainboard" aria-pressed="true">Mainboard</button><button data-board="SME" aria-pressed="false">SME</button><button data-board="All" aria-pressed="false">All IPOs</button></div><div class="filters"><label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search an IPO…" aria-label="Search IPO name"></label><select id="status" aria-label="Filter by IPO status"><option value="Unlisted">All unlisted</option><option value="Upcoming">Upcoming</option><option value="Open">Open / closing today</option><option value="Closed">Closed</option><option value="Listed">Listed</option><option value="All">All statuses</option></select></div></div>
+      <div class="table-scroll"><table><thead><tr>
+        <th><button data-sort="name">COMPANY <span>↕</span></button></th><th class="num"><button data-sort="gmp">GMP <span>↕</span></button></th><th class="num"><button data-sort="gmpPercent">GMP % <span>↕</span></button></th><th class="num emphasis"><button data-sort="profitPerLot">EST. PROFIT / LOT <span>↕</span></button></th><th class="num"><button data-sort="price">PRICE <span>↕</span></button></th><th class="num"><button data-sort="lotSize">LOT SIZE <span>↕</span></button></th><th>STATUS</th><th class="num">ISSUE SIZE</th><th>OPEN → CLOSE</th><th>LISTING</th><th>RATING</th><th>GMP UPDATED</th>
+      </tr></thead><tbody id="rows"></tbody></table></div>
+      <div id="empty" class="empty" hidden><span>⌕</span><h3>No IPOs in this view</h3><p>Try another segment, status, or company name.</p><button class="secondary" id="reset">Reset filters</button></div>
+      <div class="table-footer"><span id="showing">Loading IPO data…</span><span><i class="tiny-dot"></i> Amounts in INR · Times in IST</span></div>
+    </section>
+    <section class="notes"><div class="note-symbol">i</div><div><strong>Understand the estimate</strong><p>Estimated profit per lot is taken from the latest detail-page entry. If a detail page is unavailable, a marked estimate uses GMP × lot size. Unknown values appear as —. GMP is an unofficial market indicator; estimated gains are not guaranteed.</p></div></section>
+    <footer><span>GmpTraqer <span class="muted">/ A little more clarity before listing day.</span></span><span>Data from <a href="https://www.investorgain.com/report/ipo-gmp-live/331/" target="_blank" rel="noopener noreferrer">InvestorGain ↗</a></span></footer>
+  </main>
+  <script id="initial-data" type="application/json">__SNAPSHOT__</script>
+  <script src="/app.js" defer></script>
+</body>
+</html>
